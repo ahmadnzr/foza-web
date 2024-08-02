@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ThemeProvider } from "styled-components";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 import App from "./App.tsx";
 
 import GlobalStyles from "./helpers/theme/globalStyles.ts";

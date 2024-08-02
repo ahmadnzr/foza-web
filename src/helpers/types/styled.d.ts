@@ -1,13 +1,13 @@
 import "styled-components";
 
-interface FontSize {
+export interface FontSize {
   xs: string;
   sm: string;
   md: string;
   lg: string;
   xlg: string;
 }
-interface FontWeight {
+export interface FontWeight {
   normal: number;
   bold: number;
   semiBold: number;

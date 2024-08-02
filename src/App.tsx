@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 
-import { Button, Container, Heading, Text } from "./components/";
+import {
+  Button,
+  Container,
+  ExploreSection,
+  Heading,
+  Text,
+} from "./components/";
 import { Navbar } from "./components";
 
 function App() {
@@ -27,23 +33,28 @@ function App() {
               </ButtonContainer>
             </HeroContent>
             <HeroProduct>
-              <ProductInch $position={{ top: "160px", right: "-200px" }}>
+              <ProductInch $position={{ top: "160px", right: "-120px" }}>
                 <label className="text">65 inch</label>
               </ProductInch>
-              <ProductInch $position={{ bottom: "110px", right: "-200px" }}>
+              <ProductInch $position={{ bottom: "110px", right: "-120px" }}>
                 <label className="text">65 inch</label>
               </ProductInch>
-              <ProductInch $position={{ top: "160px", left: "-200px" }}>
+              <ProductInch $position={{ top: "160px", left: "-150px" }}>
                 <label className="text">65 inch</label>
               </ProductInch>
-              <ProductInch $position={{ bottom: "110px", left: "-200px" }}>
+              <ProductInch $position={{ bottom: "110px", left: "-150px" }}>
                 <label className="text">65 inch</label>
               </ProductInch>
-              <img src="/images/products/65.png" alt="65ich" />
+              <img
+                className="product-img"
+                src="/images/products/65.png"
+                alt="65ich"
+              />
             </HeroProduct>
           </Container>
         </Content>
       </Hero>
+      <ExploreSection />
     </>
   );
 }
@@ -53,7 +64,7 @@ export default App;
 const Hero = styled.section`
   content: "";
   width: 100%;
-  height: 100vh;
+  min-height: 1100px;
   position: relative;
 
   background-size: cover !important;
@@ -89,6 +100,12 @@ const HeroProduct = styled.div`
   width: 776px;
   margin: 0 auto;
   position: relative;
+
+  & .product-img {
+    height: 499px;
+    width: 776px;
+    object-fit: contain;
+  }
 `;
 
 const ProductInch = styled.div<{
