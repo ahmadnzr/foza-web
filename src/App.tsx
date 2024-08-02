@@ -10,6 +10,7 @@ import {
   ContactUs,
   Heading,
   Text,
+  Footer,
 } from "./components/";
 import { Navbar } from "./components";
 
@@ -63,6 +64,7 @@ function App() {
       <Feature />
       <Download />
       <ContactUs />
+      <Footer />
     </>
   );
 }

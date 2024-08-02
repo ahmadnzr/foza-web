@@ -6,4 +6,5 @@ export * from "./ExploreSection";
 export * from "./AboutUs";
 export * from "./Download";
 export * from "./Features";
+export * from "./Contact";
 export * from "./Footer";
