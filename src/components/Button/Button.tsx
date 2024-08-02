@@ -4,13 +4,18 @@ import styled, { css } from "styled-components";
 interface ButtonProps {
   children: React.ReactNode;
   primary?: boolean;
+  icon?: string;
 }
 
-export const Button = ({ primary, children }: ButtonProps) => {
-  return <BtnContainer $isPrimary={primary}>{children}</BtnContainer>;
+export const Button = ({ icon, primary, children }: ButtonProps) => {
+  return (
+    <BtnContainer $icon={icon} $isPrimary={primary}>
+      {children}
+    </BtnContainer>
+  );
 };
 
-const BtnContainer = styled.button<{ $isPrimary?: boolean }>`
+const BtnContainer = styled.button<{ $isPrimary?: boolean; $icon?: string }>`
   cursor: pointer;
   display: inline-flex;
   height: 40px;
@@ -20,6 +25,17 @@ const BtnContainer = styled.button<{ $isPrimary?: boolean }>`
   gap: 10px;
   flex-shrink: 0;
   border-radius: 5px;
+
+  ${(props) =>
+    props.$icon &&
+    css`
+      &:before {
+        content: "";
+        height: 23px;
+        width: 23px;
+        background: url(${props.$icon});
+      }
+    `}
 
   ${(props) =>
     props.$isPrimary

@@ -4,6 +4,7 @@ import {
   AboutUs,
   Button,
   Container,
+  Download,
   ExploreSection,
   Feature,
   Heading,
@@ -59,6 +60,7 @@ function App() {
       <ExploreSection />
       <AboutUs />
       <Feature />
+      <Download />
     </>
   );
 }
