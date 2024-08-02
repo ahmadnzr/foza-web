@@ -205,7 +205,9 @@ export const ExploreSection = () => {
                   </Item>
                 ))}
               </ItemContainer>
-              <Text weight="semiBold">{item.title}</Text>
+              <Text size="xs" weight="semiBold">
+                {item.title}
+              </Text>
             </Card>
           </SwiperSlide>
         ))}

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 import {
+  AboutUs,
   Button,
   Container,
   ExploreSection,
@@ -25,7 +26,7 @@ function App() {
                 <label className="styled">Advanced Technology</label>
               </Heading>
               <Box>
-                <Text>10 in 1 Smart Solution for New Generation</Text>
+                <Text size="xs">10 in 1 Smart Solution for New Generation</Text>
               </Box>
               <ButtonContainer>
                 <Button primary>See Product</Button>
@@ -55,6 +56,7 @@ function App() {
         </Content>
       </Hero>
       <ExploreSection />
+      <AboutUs />
     </>
   );
 }
