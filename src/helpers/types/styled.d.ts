@@ -17,11 +17,12 @@ interface FontWeight {
 declare module "styled-components" {
   export interface DefaultTheme {
     fontWeight: FontWeight;
+    fontSize: FontSize;
     mobile: {
       fontSize: FontSize;
     };
-    desktop: {
-      fontSize: FontSize;
+    color: {
+      gradient1: string;
     };
   }
 }

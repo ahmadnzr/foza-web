@@ -7,16 +7,14 @@ export const myTheme: DefaultTheme = {
     semiBold: 600,
     bold: 700,
   },
-  mobile: {
-    fontSize: {
-      xs: "16px",
-      sm: "20px",
-      md: "25px",
-      lg: "50px",
-      xlg: "65px",
-    },
+  fontSize: {
+    xs: "16px",
+    sm: "20px",
+    md: "25px",
+    lg: "50px",
+    xlg: "65px",
   },
-  desktop: {
+  mobile: {
     fontSize: {
       xs: "13px",
       sm: "16px",
@@ -24,5 +22,8 @@ export const myTheme: DefaultTheme = {
       lg: "27px",
       xlg: "30px",
     },
+  },
+  color: {
+    gradient1: "0px 4px 10px #331d60;",
   },
 };
