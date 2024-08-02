@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   ExploreSection,
+  Feature,
   Heading,
   Text,
 } from "./components/";
@@ -57,6 +58,7 @@ function App() {
       </Hero>
       <ExploreSection />
       <AboutUs />
+      <Feature />
     </>
   );
 }
