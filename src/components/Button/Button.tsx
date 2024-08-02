@@ -5,11 +5,12 @@ interface ButtonProps {
   children: React.ReactNode;
   primary?: boolean;
   icon?: string;
+  style?: React.CSSProperties;
 }
 
-export const Button = ({ icon, primary, children }: ButtonProps) => {
+export const Button = ({ style, icon, primary, children }: ButtonProps) => {
   return (
-    <BtnContainer $icon={icon} $isPrimary={primary}>
+    <BtnContainer style={style} $icon={icon} $isPrimary={primary}>
       {children}
     </BtnContainer>
   );

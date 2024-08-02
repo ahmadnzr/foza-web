@@ -6,8 +6,8 @@ import { Button } from "../Button";
 
 const DownloadContainer = styled(Container)`
   position: relative;
+  min-height: 500px;
   padding: 50px 0;
-  height: 500px;
 
   & .img-download {
     position: absolute;

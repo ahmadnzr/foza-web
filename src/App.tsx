@@ -7,6 +7,7 @@ import {
   Download,
   ExploreSection,
   Feature,
+  ContactUs,
   Heading,
   Text,
 } from "./components/";
@@ -61,6 +62,7 @@ function App() {
       <AboutUs />
       <Feature />
       <Download />
+      <ContactUs />
     </>
   );
 }
