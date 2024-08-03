@@ -1,8 +1,45 @@
 import React from "react";
 import styled from "styled-components";
+
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { Button } from "../Button";
+import { banners } from "../../helpers/data";
+
+export const AboutUs = () => {
+  return (
+    <AboutContainer>
+      <Content>
+        <Detail>
+          <SectionLabel>About Us</SectionLabel>
+          <SectionTitle>Wanna Know More About FOZA?</SectionTitle>
+          <Text size="xs" style={{ lineHeight: "30px" }}>
+            FOZA is an advanced & innovative brand that CARES about any
+            collaborations in daily business activities. We focus on designing
+            interactive & collaborative solutions to complete and maximize
+            people's performances in business and education
+          </Text>
+          <Button primary>Chat Us Now</Button>
+        </Detail>
+        <Banner>
+          {banners.map((item, i) => (
+            <Card $url={item.img} key={i}>
+              <TitleContainer>
+                <Text size="sm" weight="semiBold">
+                  {item.title}
+                </Text>
+                <Text id="desc" size="xs">
+                  {item.desc}
+                </Text>
+              </TitleContainer>
+            </Card>
+          ))}
+        </Banner>
+      </Content>
+      <Gradient5 />
+    </AboutContainer>
+  );
+};
 
 const AboutContainer = styled(Container)`
   position: relative;
@@ -95,55 +132,3 @@ const Gradient5 = styled.div`
   left: 267px;
   bottom: 34px;
 `;
-
-export const AboutUs = () => {
-  const banners = [
-    {
-      title: "Excellent Collaboration",
-      img: "/images/banner1.png",
-      desc: "experience the simplest and most efficient way for meeting with interactive display at your hand. turn your dream collaboration into reality NOW",
-    },
-    {
-      title: "Innovative Solution",
-      img: "/images/banner2.png",
-      desc: "experience the simplest and most efficient way for meeting with interactive display at your hand. turn your dream collaboration into reality NOW",
-    },
-    {
-      title: "Best Pick for All Your Needs",
-      img: "/images/banner3.png",
-      desc: "experience the simplest and most efficient way for meeting with interactive display at your hand. turn your dream collaboration into reality NOW",
-    },
-  ];
-  return (
-    <AboutContainer>
-      <Content>
-        <Detail>
-          <SectionLabel>About Us</SectionLabel>
-          <SectionTitle>Wanna Know More About FOZA?</SectionTitle>
-          <Text size="xs" style={{ lineHeight: "30px" }}>
-            FOZA is an advanced & innovative brand that CARES about any
-            collaborations in daily business activities. We focus on designing
-            interactive & collaborative solutions to complete and maximize
-            people's performances in business and education
-          </Text>
-          <Button primary>Chat Us Now</Button>
-        </Detail>
-        <Banner>
-          {banners.map((item, i) => (
-            <Card $url={item.img} key={i}>
-              <TitleContainer>
-                <Text size="sm" weight="semiBold">
-                  {item.title}
-                </Text>
-                <Text id="desc" size="xs">
-                  {item.desc}
-                </Text>
-              </TitleContainer>
-            </Card>
-          ))}
-        </Banner>
-      </Content>
-      <Gradient5 />
-    </AboutContainer>
-  );
-};

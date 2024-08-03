@@ -1,19 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import { Text } from "../Typography";
 
 export const Navbar = () => {
+  const navbarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (navbarRef.current) {
+        const scrollY = window.scrollY;
+        const h = navbarRef.current.offsetHeight;
+
+        if (scrollY > h) {
+          navbarRef?.current.classList.add("bg");
+        } else {
+          navbarRef?.current.classList.remove("bg");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper ref={navbarRef}>
       <NavLogo $url="/icons/foza.png" />
       <NavMenu>
-        <NavItem $selected>Home</NavItem>
-        <NavItem>Category</NavItem>
-        <NavItem>About Us</NavItem>
-        <NavItem>Features</NavItem>
-        <NavItem>Contact Us</NavItem>
-        <NavItem>Download</NavItem>
+        <NavItem size="xs" $selected>
+          Home
+        </NavItem>
+        <NavItem size="xs">Category</NavItem>
+        <NavItem size="xs">About Us</NavItem>
+        <NavItem size="xs">Features</NavItem>
+        <NavItem size="xs">Contact Us</NavItem>
+        <NavItem size="xs">Download</NavItem>
       </NavMenu>
     </Wrapper>
   );
@@ -27,6 +52,14 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 1s ease;
+
+  &.bg {
+    z-index: 999;
+    position: fixed;
+    background: linear-gradient(180deg, #122342 0%, #0b0c27 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 const NavLogo = styled.div<{ $url: string }>`
@@ -39,7 +72,7 @@ const NavLogo = styled.div<{ $url: string }>`
   width: 137px;
   height: 39px;
 
-  background-position: center;
+  background-size: cover !important;
   background: url(/icons/foza.png);
   cursor: pointer;
 `;

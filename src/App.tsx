@@ -21,9 +21,9 @@ function App() {
         <Content>
           <Gradient3 />
           <Gradient2 />
+          <Navbar />
           <Container>
             <Gradient />
-            <Navbar />
             <HeroContent>
               <Heading type="h1">
                 Experience a New Face <br /> Of{" "}
@@ -39,16 +39,24 @@ function App() {
             </HeroContent>
             <HeroProduct>
               <ProductInch $position={{ top: "160px", right: "-120px" }}>
-                <label className="text">65 inch</label>
+                <Text size="sm" weight="bold">
+                  65 inch
+                </Text>
               </ProductInch>
               <ProductInch $position={{ bottom: "110px", right: "-120px" }}>
-                <label className="text">65 inch</label>
+                <Text size="sm" weight="bold">
+                  75 inch
+                </Text>
               </ProductInch>
               <ProductInch $position={{ top: "160px", left: "-150px" }}>
-                <label className="text">65 inch</label>
+                <Text size="sm" weight="bold">
+                  86 inch
+                </Text>
               </ProductInch>
               <ProductInch $position={{ bottom: "110px", left: "-150px" }}>
-                <label className="text">65 inch</label>
+                <Text size="sm" weight="bold">
+                  98 inch
+                </Text>
               </ProductInch>
               <img
                 className="product-img"
@@ -93,7 +101,7 @@ const Hero = styled.section`
     background: linear-gradient(
       0deg,
       rgba(2, 0, 36, 0.99) 21%,
-      rgba(0, 0, 0, 1) 100%
+      rgba(0, 0, 0, 0.9) 100%
     );
   }
 `;
@@ -138,12 +146,6 @@ const ProductInch = styled.div<{
     border-radius: 15px;
     border: 1px solid #3b7bb9;
     background: rgba(59, 123, 185, 0.1);
-
-    & .text {
-      color: #fff;
-      font-size: 20px;
-      font-weight: 800;
-    }
   `}
 `;
 

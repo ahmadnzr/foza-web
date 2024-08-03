@@ -4,19 +4,6 @@ import { Container } from "../Container";
 import { SectionLabel, SectionTitle } from "../Typography";
 import { Button } from "../Button";
 
-const ContactContainer = styled(Container)`
-  position: relative;
-  min-height: 500px;
-  overflow: hidden;
-
-  & .contact-img {
-    position: absolute;
-    top: 60px;
-    width: 737px;
-    height: 374px;
-  }
-`;
-
 export const ContactUs = () => {
   return (
     <ContactContainer>
@@ -36,6 +23,18 @@ export const ContactUs = () => {
   );
 };
 
+const ContactContainer = styled(Container)`
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+
+  & .contact-img {
+    position: absolute;
+    top: 60px;
+    width: 737px;
+    height: 374px;
+  }
+`;
 const Content = styled.div`
   z-index: 5;
   padding: 50px 0;

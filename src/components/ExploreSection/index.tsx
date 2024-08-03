@@ -1,10 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { dataSlide } from "../../helpers/data";
 
 const ExploreContainer = styled(Container)`
   position: relative;
@@ -82,97 +83,6 @@ const SwiperContainer = styled(Swiper)`
 `;
 
 export const ExploreSection = () => {
-  const dataSlide = [
-    {
-      image: "/images/products/65.png",
-      title: "FOZA Interactive Smart Display Panel FID-65A",
-      features: [
-        {
-          icon: "/icons/touch.svg",
-          label: "Multi Touch 20",
-        },
-        {
-          icon: "/icons/projector.svg",
-          label: "Wireless Projector",
-        },
-        {
-          icon: "/icons/whiteboard.svg",
-          label: "Realtime Whiteboard, Co-Whiteboard",
-        },
-        {
-          icon: "/icons/tv.svg",
-          label: "Built-in Camera",
-        },
-      ],
-    },
-    {
-      image: "/images/products/75.png",
-      title: "FOZA Interactive Smart Display Panel FID-75A",
-      features: [
-        {
-          icon: "/icons/touch.svg",
-          label: "Multi Touch 20",
-        },
-        {
-          icon: "/icons/projector.svg",
-          label: "Wireless Projector",
-        },
-        {
-          icon: "/icons/whiteboard.svg",
-          label: "Realtime Whiteboard, Co-Whiteboard",
-        },
-        {
-          icon: "/icons/tv.svg",
-          label: "Built-in Camera",
-        },
-      ],
-    },
-    {
-      image: "/images/products/86.png",
-      title: "FOZA Interactive Smart Display Panel FID-65A",
-      features: [
-        {
-          icon: "/icons/touch.svg",
-          label: "Multi Touch 20",
-        },
-        {
-          icon: "/icons/projector.svg",
-          label: "Wireless Projector",
-        },
-        {
-          icon: "/icons/whiteboard.svg",
-          label: "Realtime Whiteboard, Co-Whiteboard",
-        },
-        {
-          icon: "/icons/tv.svg",
-          label: "Built-in Camera",
-        },
-      ],
-    },
-    {
-      image: "/images/products/98.png",
-      title: "FOZA Interactive Smart Display Panel FID-65A",
-      features: [
-        {
-          icon: "/icons/touch.svg",
-          label: "Multi Touch 20",
-        },
-        {
-          icon: "/icons/projector.svg",
-          label: "Wireless Projector",
-        },
-        {
-          icon: "/icons/whiteboard.svg",
-          label: "Realtime Whiteboard, Co-Whiteboard",
-        },
-        {
-          icon: "/icons/tv.svg",
-          label: "Built-in Camera",
-        },
-      ],
-    },
-  ];
-
   return (
     <ExploreContainer>
       <Gradient2 />
