@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { css } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
