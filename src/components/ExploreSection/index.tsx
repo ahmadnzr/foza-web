@@ -6,6 +6,7 @@ import { Autoplay } from "swiper/modules";
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { dataSlide } from "../../helpers/data";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const ExploreSection = ({ id }: { id?: string }) => {
   return (
@@ -27,6 +28,12 @@ export const ExploreSection = ({ id }: { id?: string }) => {
         slidesPerView={3}
         modules={[Autoplay]}
         loop
+        breakpoints={{
+          300: {
+            slidesPerView: 2,
+            spaceBetween: 150,
+          },
+        }}
       >
         {dataSlide.map((item, i) => (
           <SwiperSlide key={i}>
@@ -55,6 +62,10 @@ const ExploreContainer = styled(Container)`
   position: relative;
   text-align: center;
   padding: 50px 0;
+
+  ${mobile(css`
+    padding: 10px 0;
+  `)}
 `;
 
 const Card = styled.div`
@@ -84,6 +95,17 @@ const Card = styled.div`
     );
     box-shadow: 0px 4px 60px 0px rgba(90, 48, 138, 0.52);
   }
+
+  ${mobile(css`
+    width: 250px;
+    padding: 10px;
+    gap: 10px;
+
+    & .card-img {
+      width: 200px;
+      height: 150px;
+    }
+  `)}
 `;
 
 const Item = styled.div`
@@ -112,6 +134,23 @@ const Item = styled.div`
     font-weight: 500;
     line-height: normal;
   }
+
+  ${mobile(css`
+    min-height: 35px;
+    padding: 2px 5px;
+    gap: 2px;
+
+    border-radius: 3px;
+
+    & .item-icon {
+      width: 10px;
+      height: 10px;
+    }
+
+    & .item-label {
+      font-size: 8px;
+    }
+  `)}
 `;
 
 const ItemContainer = styled.div`
@@ -132,6 +171,11 @@ const NavMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  ${mobile(css`
+    width: 300px;
+    margin: 15px auto 0;
+  `)}
 `;
 
 const NavItem = styled(Text)<{ $selected?: boolean }>`
@@ -145,13 +189,15 @@ const NavItem = styled(Text)<{ $selected?: boolean }>`
       color: #fff;
       font-size: ${props.theme.fontSize.xs};
       text-shadow: 2px 2px 5px #5a308a;
-      font-size: ${props.theme.fontSize.sm};
       font-weight: 600;
     `}
 
   &:hover {
     color: #fff;
+    font-size: 8px;
   }
+
+  ${mobile(css``)}
 `;
 
 const Gradient2 = styled.div`

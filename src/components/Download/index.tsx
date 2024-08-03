@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { Button } from "../Button";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const Download = ({ id }: { id?: string }) => {
   return (
@@ -63,6 +64,10 @@ const DownloadContainer = styled.section`
       rgba(0, 0, 0, 0.97) 100%
     );
   }
+
+  ${mobile(css`
+    min-height: 100vh;
+  `)}
 `;
 
 const Content = styled.div`
@@ -73,6 +78,10 @@ const Content = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+
+  ${mobile(css`
+    padding: 10px 0;
+  `)}
 `;
 
 const CustomContainer = styled(Container)`
@@ -84,7 +93,16 @@ const CustomContainer = styled(Container)`
     position: absolute;
     right: -140px;
   }
+
+  ${mobile(css`
+    gap: 40px;
+    & .img-download {
+      right: 50px;
+      bottom: 150px;
+    }
+  `)}
 `;
+
 const Detail = styled.div`
   width: 700px;
   display: flex;
@@ -92,12 +110,26 @@ const Detail = styled.div`
   gap: 10px;
   justify-content: flex-start;
   align-items: start;
+
+  ${mobile(css`
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    gap: 5px;
+    padding: 10px;
+  `)}
 `;
 
 const ButtonContainer = styled.div`
   margin: 50px 0;
   display: flex;
   gap: 10px;
+
+  ${mobile(css`
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 5px;
+  `)}
 `;
 
 const QRContainer = styled.div`
@@ -105,6 +137,12 @@ const QRContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  ${mobile(css`
+    gap: 5px;
+    margin-top: 100px;
+    margin-left: 50px;
+  `)}
 `;
 
 const Gradient5 = styled.div`
@@ -119,4 +157,8 @@ const Gradient5 = styled.div`
   position: absolute;
   right: 267px;
   bottom: 34px;
+
+  ${mobile(css`
+    display: none;
+  `)}
 `;

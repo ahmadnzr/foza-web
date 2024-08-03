@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -26,6 +27,7 @@ const BtnContainer = styled.button<{ $isPrimary?: boolean; $icon?: string }>`
   gap: 10px;
   flex-shrink: 0;
   border-radius: 5px;
+  font-size: ${(props) => props.theme.fontSize.xs};
 
   ${(props) =>
     props.$icon &&
@@ -48,4 +50,10 @@ const BtnContainer = styled.button<{ $isPrimary?: boolean; $icon?: string }>`
           border: 1px solid #5a308a;
           background: #030511;
         `}
+
+  ${mobile(css`
+    height: 30px;
+    padding: 0px 8px;
+    gap: 5px;
+  `)}
 `;

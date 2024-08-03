@@ -1,10 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { Button } from "../Button";
 import { banners } from "../../helpers/data";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const AboutUs = ({ id }: { id?: string }) => {
   return (
@@ -45,6 +46,10 @@ const AboutContainer = styled(Container)`
   position: relative;
   padding: 50px 0;
   height: 500px;
+
+  ${mobile(css`
+    height: 100vh;
+  `)}
 `;
 const Content = styled.div`
   z-index: 5;
@@ -55,7 +60,13 @@ const Content = styled.div`
   bottom: 0;
   display: flex;
   gap: 40px;
+
+  ${mobile(css`
+    flex-direction: column;
+    gap: 20px;
+  `)}
 `;
+
 const Detail = styled.div`
   width: 400px;
   display: flex;
@@ -63,12 +74,22 @@ const Detail = styled.div`
   gap: 10px;
   justify-content: flex-start;
   align-items: start;
+
+  ${mobile(css`
+    padding: 20px;
+  `)}
 `;
 
 const Banner = styled.div`
   flex: 1;
   display: flex;
   gap: 10px;
+
+  ${mobile(css`
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  `)}
 `;
 
 const Card = styled.div<{ $url: string }>`
@@ -99,6 +120,12 @@ const Card = styled.div<{ $url: string }>`
       display: inline-block;
     }
   }
+
+  ${mobile(css`
+    & #desc {
+      display: inline-block;
+    }
+  `)}
 `;
 
 const TitleContainer = styled.div`
@@ -131,4 +158,8 @@ const Gradient5 = styled.div`
   position: absolute;
   left: 267px;
   bottom: 34px;
+
+  ${mobile(css`
+    display: none;
+  `)}
 `;
