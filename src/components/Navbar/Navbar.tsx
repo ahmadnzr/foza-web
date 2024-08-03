@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 import { Text } from "../Typography";
 import { Container } from "../Container";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const Navbar = () => {
   const navbarRef = useRef<HTMLElement>(null);
@@ -31,7 +32,8 @@ export const Navbar = () => {
   return (
     <Wrapper ref={navbarRef}>
       <CustomNavbarContainer>
-        <NavLogo $url="/icons/foza.png" />
+        <img className="logo" src="/icons/foza.png" />
+        <img className="burger" src="/icons/burger.png" />
         <NavMenu>
           <NavItem size="xs" $selected>
             <a href="#home">Home</a>
@@ -69,6 +71,10 @@ const Wrapper = styled.nav`
     background: linear-gradient(180deg, #122342 0%, #0b0c27 100%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
+
+  ${mobile(css`
+    height: 70px;
+  `)}
 `;
 
 const CustomNavbarContainer = styled(Container)`
@@ -78,27 +84,51 @@ const CustomNavbarContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
 
-const NavLogo = styled.div<{ $url: string }>`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  & .burger {
+    display: none;
+  }
+  & .logo {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 
-  content: "";
-  width: 137px;
-  height: 39px;
+    width: 137px;
+    height: 39px;
+    object-fit: contain;
+    cursor: pointer;
+  }
 
-  background-size: cover !important;
-  background: url(/icons/foza.png);
-  cursor: pointer;
+  ${mobile(css`
+    padding: 0;
+
+    & .logo {
+      width: 115px;
+      height: 33px;
+      left: 20px;
+    }
+    & .burger {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+
+      object-fit: contain;
+      cursor: pointer;
+    }
+  `)}
 `;
 
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
+
+  ${mobile(css`
+    display: none;
+  `)}
 `;
 
 const NavItem = styled(Text)<{ $selected?: boolean }>`

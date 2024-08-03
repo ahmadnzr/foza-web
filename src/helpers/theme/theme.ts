@@ -16,11 +16,11 @@ export const myTheme: DefaultTheme = {
   },
   mobile: {
     fontSize: {
-      xs: "13px",
+      xs: "12px",
       sm: "16px",
       md: "20px",
       lg: "27px",
-      xlg: "30px",
+      xlg: "25px",
     },
   },
   color: {

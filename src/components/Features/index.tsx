@@ -1,11 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle } from "../Typography";
 import { slides } from "../../helpers/data";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const Feature = ({ id }: { id?: string }) => {
   return (
@@ -56,6 +57,10 @@ export const Feature = ({ id }: { id?: string }) => {
 const FeatureContainer = styled.section`
   text-align: center;
   padding: 50px 0;
+
+  ${mobile(css`
+    padding: 20px 0;
+  `)}
 `;
 
 const Slides = styled(Swiper)`
@@ -70,28 +75,13 @@ const Card = styled.div<{ $url: string }>`
   display: flex;
   height: 177px;
   width: 251px;
-  padding: 10px;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  border-radius: 17px;
-  border: 1px solid #3b7bb9;
-  transition: 0.3s ease;
-
   border-radius: 17px;
   border: 1px solid #3b7bb9;
   background: url(${(props) => props.$url}) lightgray 50% / cover no-repeat;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-  & #desc {
-    display: none;
-  }
-
-  &:hover {
-    flex: 2;
-
-    & #desc {
-      display: inline-block;
-    }
-  }
+  ${mobile(css`
+    height: 120px;
+    width: 200px;
+  `)}
 `;

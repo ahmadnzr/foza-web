@@ -8,3 +8,4 @@ export * from "./Download";
 export * from "./Features";
 export * from "./Contact";
 export * from "./Footer";
+export * from "./Hero";
