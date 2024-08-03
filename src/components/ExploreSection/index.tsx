@@ -32,6 +32,10 @@ export const ExploreSection = ({ id }: { id?: string }) => {
             slidesPerView: 2,
             spaceBetween: 150,
           },
+          600: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
         }}
       >
         {dataSlide.map((item, i) => (
