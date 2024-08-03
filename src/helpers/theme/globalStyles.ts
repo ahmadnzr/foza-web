@@ -37,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
      text-rendering: optimizeLegibility;
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   *, *::before, *::after {
@@ -53,6 +54,10 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   img, picture, video, canvas, svg {

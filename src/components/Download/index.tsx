@@ -5,9 +5,9 @@ import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { Button } from "../Button";
 
-export const Download = () => {
+export const Download = ({ id }: { id?: string }) => {
   return (
-    <DownloadContainer>
+    <DownloadContainer id={id}>
       <Content>
         <CustomContainer>
           <Detail>
@@ -28,9 +28,13 @@ export const Download = () => {
               <img src="/images/qr.png" alt="qr code" />
             </QRContainer>
           </Detail>
+          <img
+            className="img-download"
+            src="/images/download.png"
+            alt="download"
+          />
         </CustomContainer>
       </Content>
-      <img className="img-download" src="/images/download.png" alt="download" />
       <Gradient5 />
     </DownloadContainer>
   );
@@ -59,11 +63,6 @@ const DownloadContainer = styled.section`
       rgba(0, 0, 0, 0.97) 100%
     );
   }
-
-  & .img-download {
-    position: absolute;
-    right: 0;
-  }
 `;
 
 const Content = styled.div`
@@ -77,8 +76,14 @@ const Content = styled.div`
 `;
 
 const CustomContainer = styled(Container)`
+  position: relative;
   display: flex;
   gap: 40px;
+
+  & .img-download {
+    position: absolute;
+    right: -140px;
+  }
 `;
 const Detail = styled.div`
   width: 700px;

@@ -6,9 +6,9 @@ import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { Button } from "../Button";
 import { banners } from "../../helpers/data";
 
-export const AboutUs = () => {
+export const AboutUs = ({ id }: { id?: string }) => {
   return (
-    <AboutContainer>
+    <AboutContainer id={id}>
       <Content>
         <Detail>
           <SectionLabel>About Us</SectionLabel>

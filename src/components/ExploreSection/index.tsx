@@ -7,6 +7,50 @@ import { Container } from "../Container";
 import { SectionLabel, SectionTitle, Text } from "../Typography";
 import { dataSlide } from "../../helpers/data";
 
+export const ExploreSection = ({ id }: { id?: string }) => {
+  return (
+    <ExploreContainer id={id}>
+      <Gradient2 />
+      <SectionLabel>Our Categories</SectionLabel>
+      <SectionTitle>Explore Us Now</SectionTitle>
+
+      <NavMenu>
+        <NavItem $selected>All FOZA</NavItem>
+        <NavItem>Interactive Display</NavItem>
+        <NavItem>Notebook</NavItem>
+        <NavItem>Tablet</NavItem>
+      </NavMenu>
+
+      <SwiperContainer
+        autoplay
+        spaceBetween={30}
+        slidesPerView={3}
+        modules={[Autoplay]}
+        loop
+      >
+        {dataSlide.map((item, i) => (
+          <SwiperSlide key={i}>
+            <Card>
+              <img className="card-img" src={item.image} alt={item.title} />
+              <ItemContainer>
+                {item.features.map((feature, j) => (
+                  <Item key={j}>
+                    <img className="item-icon" src={feature.icon} alt="ok" />
+                    <label className="item-label">{feature.label}</label>
+                  </Item>
+                ))}
+              </ItemContainer>
+              <Text size="xs" weight="semiBold">
+                {item.title}
+              </Text>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </SwiperContainer>
+    </ExploreContainer>
+  );
+};
+
 const ExploreContainer = styled(Container)`
   position: relative;
   text-align: center;
@@ -81,50 +125,6 @@ const ItemContainer = styled.div`
 const SwiperContainer = styled(Swiper)`
   padding: 50px 0;
 `;
-
-export const ExploreSection = () => {
-  return (
-    <ExploreContainer>
-      <Gradient2 />
-      <SectionLabel>Our Categories</SectionLabel>
-      <SectionTitle>Explore Us Now</SectionTitle>
-
-      <NavMenu>
-        <NavItem $selected>All FOZA</NavItem>
-        <NavItem>Interactive Display</NavItem>
-        <NavItem>Notebook</NavItem>
-        <NavItem>Tablet</NavItem>
-      </NavMenu>
-
-      <SwiperContainer
-        autoplay
-        spaceBetween={30}
-        slidesPerView={3}
-        modules={[Autoplay]}
-        loop
-      >
-        {dataSlide.map((item, i) => (
-          <SwiperSlide key={i}>
-            <Card>
-              <img className="card-img" src={item.image} alt={item.title} />
-              <ItemContainer>
-                {item.features.map((feature, j) => (
-                  <Item key={j}>
-                    <img className="item-icon" src={feature.icon} alt="ok" />
-                    <label className="item-label">{feature.label}</label>
-                  </Item>
-                ))}
-              </ItemContainer>
-              <Text size="xs" weight="semiBold">
-                {item.title}
-              </Text>
-            </Card>
-          </SwiperSlide>
-        ))}
-      </SwiperContainer>
-    </ExploreContainer>
-  );
-};
 
 const NavMenu = styled.div`
   width: 500px;

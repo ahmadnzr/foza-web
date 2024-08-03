@@ -1,17 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-interface Props {
+interface Props extends React.HtmlHTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className?: string;
+  style?: React.CSSProperties;
 }
 
-export const Container = ({ children, className }: Props) => {
-  return <Wrapper className={className}>{children}</Wrapper>;
+export const Container = ({ style, children, className, id }: Props) => {
+  return (
+    <Wrapper id={id} style={style} className={className}>
+      {children}
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
-  position: relative;
   max-width: 1512px;
   margin: 0 auto;
 `;

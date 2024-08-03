@@ -17,12 +17,16 @@ import { Navbar } from "./components";
 function App() {
   return (
     <>
-      <Hero>
+      <Hero id="#home">
         <Content>
           <Gradient3 />
           <Gradient2 />
           <Navbar />
-          <Container>
+          <Container
+            style={{
+              position: "relative",
+            }}
+          >
             <Gradient />
             <HeroContent>
               <Heading type="h1">
@@ -67,11 +71,11 @@ function App() {
           </Container>
         </Content>
       </Hero>
-      <ExploreSection />
-      <AboutUs />
-      <Feature />
-      <Download />
-      <ContactUs />
+      <ExploreSection id="explore" />
+      <AboutUs id="about" />
+      <Feature id="feature" />
+      <Download id="download" />
+      <ContactUs id="contact" />
       <Footer />
     </>
   );
@@ -199,7 +203,8 @@ const Gradient3 = styled.div`
 
 const Gradient = styled.div`
   position: absolute;
-  left: 200px;
+  top: -150px;
+  left: 100px;
   width: 33px;
   height: 288px;
   transform: rotate(25.269deg);

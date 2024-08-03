@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle } from "../Typography";
 import { Button } from "../Button";
 
-export const ContactUs = () => {
+export const ContactUs = ({ id }: { id: string }) => {
   return (
-    <ContactContainer>
+    <ContactContainer id={id}>
       <img className="contact-img" src="/images/banner1.png" alt="contact" />
       <Content>
         <Detail>

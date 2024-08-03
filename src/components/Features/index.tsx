@@ -7,9 +7,9 @@ import { Container } from "../Container";
 import { SectionLabel, SectionTitle } from "../Typography";
 import { slides } from "../../helpers/data";
 
-export const Feature = () => {
+export const Feature = ({ id }: { id?: string }) => {
   return (
-    <FeatureContainer>
+    <FeatureContainer id={id}>
       <Container>
         <SectionLabel>How It Works</SectionLabel>
         <SectionTitle>Foza Features</SectionTitle>
