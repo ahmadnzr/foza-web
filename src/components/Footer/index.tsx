@@ -1,8 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Container } from "../Container";
 import { Text } from "../Typography";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const Footer = () => {
   return (
@@ -11,7 +12,7 @@ export const Footer = () => {
       <Content>
         <CustomContainer>
           <Left>
-            <img src="/icons/foza.png" />
+            <img className="logo-foot" src="/icons/foza.png" />
             <Text size="xs" style={{ lineHeight: "30px", width: "480px" }}>
               FOZA is an advanced & innovative brand that CARES about any
               collaborations in daily business activities.
@@ -89,6 +90,15 @@ const FooterContainer = styled.section`
       rgba(0, 0, 0, 0.7) 100%
     );
   }
+
+  ${mobile(css`
+    min-height: 50vh;
+
+    & .logo-foot {
+      width: 100px;
+      object-fit: cover;
+    }
+  `)}
 `;
 
 const Content = styled.div`
@@ -100,11 +110,20 @@ const Content = styled.div`
   padding: 50px 0;
 
   z-index: 5;
+
+  ${mobile(css`
+    padding: 30px 0;
+  `)}
 `;
 
 const CustomContainer = styled(Container)`
   display: flex;
   gap: 30px;
+
+  ${mobile(css`
+    flex-direction: column;
+    gap: 20px;
+  `)}
 `;
 
 const Left = styled.div`
@@ -112,11 +131,20 @@ const Left = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 10px;
+
+  ${mobile(css`
+    gap: 5px;
+    padding: 20px;
+  `)}
 `;
 
 const Socials = styled.div`
   display: flex;
   gap: 12px;
+
+  ${mobile(css`
+    gap: 6px;
+  `)}
 `;
 
 const Item = styled.div`
@@ -129,6 +157,8 @@ const Item = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${mobile(css``)}
 `;
 
 const Right = styled.div`
@@ -138,6 +168,12 @@ const Right = styled.div`
   display: flex;
   padding-top: 20px;
   background: rgba(59, 123, 185, 0.1);
+
+  ${mobile(css`
+    padding: 0 20px;
+    padding-top: 10px;
+    margin: 10px;
+  `)}
 `;
 
 const RightItem = styled.div`
@@ -151,6 +187,12 @@ const ItemDetail = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 18px;
+
+  ${mobile(css`
+    width: 150px;
+    margin: 10px auto 0;
+    gap: 10px;
+  `)}
 `;
 
 const TextIcon = styled(Text)<{ $icon: string }>`
@@ -163,6 +205,10 @@ const TextIcon = styled(Text)<{ $icon: string }>`
     width: 20px;
     background: url(${(props) => props.$icon});
   }
+
+  ${mobile(css`
+    gap: 8px;
+  `)}
 `;
 
 const Gradient2 = styled.div`

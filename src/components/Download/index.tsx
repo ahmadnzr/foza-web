@@ -66,7 +66,7 @@ const DownloadContainer = styled.section`
   }
 
   ${mobile(css`
-    min-height: 100vh;
+    min-height: 60vh;
   `)}
 `;
 

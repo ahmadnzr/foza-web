@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Container } from "../Container";
 import { SectionLabel, SectionTitle } from "../Typography";
 import { Button } from "../Button";
+import { mobile } from "../../helpers/theme/breakpoint";
 
 export const ContactUs = ({ id }: { id: string }) => {
   return (
@@ -15,7 +16,7 @@ export const ContactUs = ({ id }: { id: string }) => {
           <SectionTitle>
             Join Us and Get More Informatoin with Our Support
           </SectionTitle>
-          <Button style={{ marginTop: "50px" }} primary>
+          <Button style={{ marginTop: "20px" }} primary>
             chat Us Now
           </Button>
         </Detail>
@@ -35,7 +36,23 @@ const ContactContainer = styled(Container)`
     width: 737px;
     height: 374px;
   }
+
+  ${mobile(css`
+    min-height: 50vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+
+    & .contact-img {
+      position: static;
+      padding: 20px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  `)}
 `;
+
 const Content = styled.div`
   z-index: 5;
   padding: 50px 0;
@@ -46,6 +63,11 @@ const Content = styled.div`
   bottom: 0;
   display: flex;
   justify-content: flex-end;
+
+  ${mobile(css`
+    position: static;
+    padding: 20px 0;
+  `)}
 `;
 
 const Detail = styled.div`
@@ -55,4 +77,9 @@ const Detail = styled.div`
   gap: 10px;
   justify-content: flex-start;
   align-items: start;
+
+  ${mobile(css`
+    width: 400px;
+    gap: 5px;
+  `)}
 `;
