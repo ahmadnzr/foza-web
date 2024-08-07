@@ -23,14 +23,14 @@ export const ExploreSection = ({ id }: { id?: string }) => {
 
       <SwiperContainer
         autoplay
-        spaceBetween={30}
-        slidesPerView={3}
+        spaceBetween={100}
+        slidesPerView="auto"
         modules={[Autoplay]}
         loop
         breakpoints={{
           300: {
             slidesPerView: 2,
-            spaceBetween: 150,
+            spaceBetween: 200,
           },
           600: {
             slidesPerView: 3,
@@ -39,7 +39,7 @@ export const ExploreSection = ({ id }: { id?: string }) => {
         }}
       >
         {dataSlide.map((item, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} style={{ width: "fit-content" }}>
             <Card>
               <img className="card-img" src={item.image} alt={item.title} />
               <ItemContainer>

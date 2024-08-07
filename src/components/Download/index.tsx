@@ -42,7 +42,7 @@ export const Download = ({ id }: { id?: string }) => {
 
 const DownloadContainer = styled.section`
   position: relative;
-  min-height: 600px;
+  min-height: 660px;
 
   background-size: cover !important;
   background-position: center;

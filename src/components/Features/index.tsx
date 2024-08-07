@@ -26,7 +26,7 @@ export const Feature = ({ id }: { id?: string }) => {
         modules={[Autoplay]}
       >
         {slides.map((item, i) => (
-          <SwiperSlide>
+          <SwiperSlide key={i}>
             <Card $url={item} key={i} />
           </SwiperSlide>
         ))}

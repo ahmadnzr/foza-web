@@ -185,7 +185,7 @@ const HeroContent = styled.div`
 `;
 
 const Box = styled.div`
-  width: 396px;
+  width: 430px;
   height: 35px;
   margin: 0 auto;
   margin-top: 10px;
